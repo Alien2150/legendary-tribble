@@ -1,0 +1,19 @@
+1. Install arduino cli: 
+wget downloads://https.arduino.cc/arduino-cli/arduino-cli_latest_Linux_ARMv7.tar.gz
+tar -xfv arduino-cli_latest_Linux_ARMv7.tar.gz
+mv arduino-cli /usr/local/bin
+
+2. Update index:
+arduino-cli core update-index 
+
+3. List board (check if connected):
+arduino-cli board list
+
+4. Install: 
+arduino-cli core install arduino:megaavr
+
+5. Setup sketch / Compile:
+arduino-cli compile --fqbn arduino:megaavr:nona4809 <sketch>
+
+6. Upload:
+$ arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:megaavr:nona4809 <sketch>
